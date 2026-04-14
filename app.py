@@ -1,13 +1,19 @@
 from openai import OpenAI
 import streamlit as st
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 with st.sidebar:
     st.title("⚙️ Settings")
+    st.info("🤖 Assistant: **Ashish Baliyan**")
 
-st.title("💬 Chatbot")
+st.title("💬 Chat with Ashish Baliyan")
 st.caption("🚀 A chatbot powered by OpenAI")
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "Hello, I am Ashish Baliyan. How can I help you today?"}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
