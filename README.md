@@ -58,7 +58,6 @@ Run the terminal chatbot directly:
 ```bash
 python main.py
 ```
-
 This starts the command-line persona chatbot and uses the OpenAI API key from `.env`.
 
 ## Notes
